@@ -3,7 +3,7 @@
 const nextConfig = {
   assetPrefix:
     process.env.NODE_ENV === "production"
-      ? "https://swy9112.github.io/psychological-test"
+      ? "/psychological-test/"
       : "",
 };
 
