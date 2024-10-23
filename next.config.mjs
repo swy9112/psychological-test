@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  output: 'export',
-  basePath: "/psychological-test",
-  assetPrefix: isProd ? '/psychological-test/' : '',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
+  assetPrefix:
+    process.env.NODE_ENV === "production"
+      ? "https://swy9112.github.io/psychological-test"
+      : "",
 };
 
 export default nextConfig;
