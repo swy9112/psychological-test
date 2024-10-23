@@ -1,9 +1,7 @@
-const isProd = process.env.NODE_ENV === 'production';
-
-module.exports = {
-  assetPrefix: isProd ? '/psychological-test/' : '',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'export',
-  images: {
-    unoptimized: true,
-  },
+  basePath: "/psychological-test",
 };
+
+export default nextConfig;
