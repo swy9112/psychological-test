@@ -3,9 +3,7 @@
 
 import Container from "@/components/Container";
 import React, { useState } from "react";
-
-import quizData from '../data/quiz.json';
-
+import quizData from "../data/quiz.json";
 
 function Button({ children, onClick }) {
   return (
