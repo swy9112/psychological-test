@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Jalnan2';
+    src: url('/psychological-test/fonts/Jalnan2.otf') format('opentype'),
+         url('/psychological-test/fonts/Jalnan2TTF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/psychological-test/fonts/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/psychological-test/fonts/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Pretendard';
+  }

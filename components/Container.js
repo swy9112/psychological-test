@@ -24,10 +24,10 @@ function Container({ children }) {
 
   return (
     <div
-      className="flex justify-center w-screen"
+      className="flex justify-center w-screen bg-main-bg"
       style={{ height: `calc(var(--vh, 1vh) * 100)` }}
     >
-      <div className="flex flex-col items-center justify-center w-full max-w-screen-md p-5">
+      <div className="relative flex flex-col items-center justify-center w-full max-w-screen-md">
         {children}
       </div>
     </div>
