@@ -24,6 +24,13 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/psychological-test/fonts/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: medium;
+  }
+
   body {
     font-family: 'Pretendard';
   }

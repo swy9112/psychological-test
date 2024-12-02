@@ -3,8 +3,7 @@
 
 import { useEffect } from "react";
 
-function Container({ children }) {
-
+function Container({ children, main, currentIdx }) {
   useEffect(() => {
     // --vh 변수를 동적으로 설정
     const setVh = () => {
@@ -24,10 +23,10 @@ function Container({ children }) {
 
   return (
     <div
-      className="flex justify-center w-screen bg-main-bg"
+      className={`flex justify-center items-center w-screen ${main ? "bg-main-bg" : currentIdx === 8 ? "bg-[#151515]" : "bg-[#F5F7FA]"}`}
       style={{ height: `calc(var(--vh, 1vh) * 100)` }}
     >
-      <div className="relative flex flex-col items-center justify-center w-full max-w-screen-md">
+      <div className="relative flex flex-col items-center justify-center w-full max-w-screen-md h-full">
         {children}
       </div>
     </div>
