@@ -19,8 +19,11 @@ module.exports = {
       keyframes: {
         rolling: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
+      },
+      willChange: {
+        transform: 'transform',
       },
       fontFamily: {
         jalnan: ['Jalnan2', 'sans-serif'], // Jalnan2 폰트 추가

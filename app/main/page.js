@@ -7,7 +7,11 @@ import quizData from "../data/quiz.json";
 
 function Button({ children, onClick }) {
   return (
-    <button type="button" className="" onClick={onClick}>
+    <button
+      type="button"
+      className="flex items-center justify-center bg-white w-[315px] h-[150px] rounded-[20px] text-[22px] text-[#585858] font-bold leading-[32px]"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -16,7 +20,7 @@ function Button({ children, onClick }) {
 function Main() {
   const [currentIdx, setCurrentIdx] = useState(0);
 
-  const handelNextQuestion = () => {
+  const handleNextQuestion = () => {
     if (currentIdx < quizData.length - 1) {
       setCurrentIdx(currentIdx + 1);
     }
@@ -24,16 +28,33 @@ function Main() {
 
   return (
     <Container>
-      <div className="flex flex-1 items-center break-keep text-center">
-        {quizData[currentIdx].question}
+      <div className="flex flex-1 items-center h-[40%] text-center text-[28px] text-white font-jalnan">
+        {quizData[currentIdx].question.split("\n").map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
       </div>
-      <div className="flex flex-col mt-auto gap-2">
-        <Button onClick={handelNextQuestion}>
-          {quizData[currentIdx].answer1}
+      <div className="flex justify-center flex-col h-[60%] mt-auto gap-4">
+        <Button onClick={handleNextQuestion}>
+          {quizData[currentIdx].answer1.split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
         </Button>
-        <Button onClick={handelNextQuestion}>
-          {quizData[currentIdx].answer2}
-        </Button>
+        {currentIdx !== 8 && (
+          <Button onClick={handleNextQuestion}>
+            {quizData[currentIdx].answer2.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </Button>
+        )}
       </div>
     </Container>
   );
