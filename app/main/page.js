@@ -1,7 +1,7 @@
 // 파일 최상단에 추가
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import Container from "@/components/Container";
 import quizData from "../data/quiz.json";
@@ -30,6 +30,33 @@ function Main() {
       router.push("/result");
     }
   };
+
+  const preloadImages = (imageUrls) => {
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url; // 브라우저가 이미지를 로드
+    });
+  }
+
+  useEffect(() => {
+    const imagesToPreload = [
+      "/psychological-test/images/quiz-1.png",
+      "/psychological-test/images/quiz-2.png",
+      "/psychological-test/images/quiz-3.png",
+      "/psychological-test/images/quiz-4.png",
+      "/psychological-test/images/quiz-5.png",
+      "/psychological-test/images/quiz-6.png",
+      "/psychological-test/images/quiz-7.png",
+      "/psychological-test/images/quiz-8.png",
+      "/psychological-test/images/quiz-10.png",
+      "/psychological-test/images/quiz-11.png",
+      "/psychological-test/images/quiz-12.png",
+      "/psychological-test/images/ring-img.png",
+      "/psychological-test/images/text-img.png",
+    ];
+
+    preloadImages(imagesToPreload); // 컴포넌트가 마운트되면 이미지를 로드
+  }, []);
 
   return (
     <Container currentIdx={currentIdx}>
